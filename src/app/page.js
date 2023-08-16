@@ -6,11 +6,13 @@ import StyledText from "./StyledText";
 
 export default function Home() {
     const [greenStar, setGreenStar] = useState(false);
+    const [text, setText] = useState(`CREATE TABLE IF NOT EXISTS "chats" ( "id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL, "title" text, "atlas_user_id" uuid NOT NULL, "created_at" timestamp DEFAULT now() );`)
+    const [question, setQuestion] = useState("Me liste todos os chats que possuem pelo menos 4 mensagens")
     return (
         <main className={styles.main}>
             <header className={styles.header}>
                 <Image
-                    className={styles.logo}
+                    className={styles.img}
                     src="/logo.svg"
                     alt="Next.js Logo"
                     width={118}
@@ -18,7 +20,7 @@ export default function Home() {
                     priority
                 />{" "}
                 <Image
-                    className={styles.logo}
+                    className={styles.img}
                     src="/trash.svg"
                     alt="Trash"
                     width={32}
@@ -29,20 +31,28 @@ export default function Home() {
 
             <section>
                 <h6>Cole seu código SQL aqui</h6>
-                <div
+                <textarea
+                    className={styles.textArea}
+                    rows={6}
+                    value={text}
+                    onChange={(e) => setText(e.target.value)}
+                    placeholder="Digite o código aqui" />
+                {text && <div
                     className={styles.lightContainer}
                 >
                     <StyledText
-                        text={`CREATE TABLE IF NOT EXISTS "chats" ( "id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL, "title" text, "atlas_user_id" uuid NOT NULL, "created_at" timestamp DEFAULT now() );`}
+                        text={text}
                     />
-                </div>
+                </div>}
             </section>
 
             <section>
                 <h6>Faça uma pergunta sobre o código</h6>
-                <div className={styles.lightContainer}>
-                    Me liste todos os chats que possuem pelo menos 4 mensagens
-                </div>
+                <textarea
+                    rows={3}
+                    onChange={(e) => setQuestion(e.target.value)}
+                    value={question}
+                    className={styles.smallTextArea} />
             </section>
 
             <button

@@ -7,6 +7,10 @@
     padding: 6rem;
 }
 
+.img {
+    cursor: pointer;
+}
+
 .header {
     width: 100%;
     display: flex;
@@ -14,23 +18,26 @@
 }
 
 .lightContainer {
+    color: #e2dfcd;
     border-radius: 5px;
     border: 1px solid rgba(220, 255, 214, 0.2);
     background: var(--8-lemon, rgba(194, 255, 184, 0.08));
     max-width: 382px;
-    max-height: 104px;
     padding: 12px;
-    overflow-y: scroll;
 }
 
 .darkContainer {
+    color: #e2dfcd;
     border-radius: 5px;
     border: 1px solid var(--20-guava, rgba(220, 255, 214, 0.2));
     max-width: 382px;
     padding: 12px;
+    height: 100px;
+    overflow-y: scroll;
 }
 
 .button {
+    cursor: pointer;
     display: flex;
     width: 382px;
     height: 53px;
@@ -60,4 +67,31 @@
 
 .star:hover {
     fill: #2dff0b !important;
+}
+
+.textArea {
+    width: 100%;
+    max-width: 382px;
+    background-color: black;
+    color: #e2dfcd;
+    border: 1px solid rgba(220, 255, 214, 0.2);
+    border-radius: 5px;
+    padding: 10px; 
+    resize: none;
+    margin-bottom: 1rem;
+}
+
+.smallTextArea {
+    color: #e2dfcd;
+    border-radius: 5px;
+    border: 1px solid var(--20-guava, rgba(220, 255, 214, 0.2));
+    max-width: 382px;
+    width: 100%;
+    resize: none;
+    background-color: #07061d;
+}
+
+.textArea:focus, .smallTextArea:focus{
+    border-color: rgba(255, 255, 255, 0.5);
+    outline: none;
 }
