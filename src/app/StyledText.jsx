@@ -1,24 +1,31 @@
-import { Light as SyntaxHighlighter } from "react-syntax-highlighter";
-import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
-
-import "./page.module.css";
-import React from "react";
+import React from 'react';
 
 const StyledText = ({ text }) => {
-    const formatText = (text) => {
-        return text
-            .replace(/SELECT|COUNT/g, '<span class="gum">$&</span>')
-            .replace(/"[^"]*"/g, '<span class="neonGreen">$&</span>')
-            .replace(/[A-Z]+/g, '<span class="cottonCandy">$&</span>')
-            .replace(/[\+\-\*\/=]/g, '<span class="pistachio">$&</span>')
-            .replace(/[^<>/\n]+/g, '<span class="cream">$&</span>');
-    };
+  const tokenize = (text) => {
+    const tokens = text.split(/("[^"]*")|([\+\-\*\/=])|([A-Z]+)|\bCOUNT\b/g);
+    return tokens.filter(token => token); // Remove empty strings from the array
+  };
 
-    const styledText = { __html: formatText(text) };
+  const formatToken = (token) => {
+    if (/^"[^"]*"$/.test(token)) {
+      return `<span class="neonGreen">${token}</span>`;
+    }
+    if (/^[\+\-\*\/=]$/.test(token)) {
+      return `<span class="pistachio">${token}</span>`;
+    }
+    if (/^[A-Z]+$/.test(token) && token !== 'COUNT') {
+      return `<span class="cottonCandy">${token}</span>`;
+    }
+    if (token === 'COUNT') {
+      return `<span class="gum">${token}</span>`;
+    }
+    return token;
+  };
 
-    return (
-        <div className="styled-text" dangerouslySetInnerHTML={styledText}></div>
-    );
+  const tokens = tokenize(text);
+  const formattedTokens = tokens.map(formatToken);
+
+  return <div className="styled-text" dangerouslySetInnerHTML={{ __html: formattedTokens.join('') }} />;
 };
 
 export default StyledText;

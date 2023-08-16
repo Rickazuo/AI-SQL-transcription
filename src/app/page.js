@@ -31,7 +31,11 @@ export default function Home() {
                 <h6>Cole seu código SQL aqui</h6>
                 <div
                     className={styles.lightContainer}
-                >{`CREATE TABLE IF NOT EXISTS "chats" ( "id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL, "title" text, "atlas_user_id" uuid NOT NULL, "created_at" timestamp DEFAULT now() );`}</div>
+                >
+                    <StyledText
+                        text={`CREATE TABLE IF NOT EXISTS "chats" ( "id" uuid PRIMARY KEY DEFAULT gen_random_uuid() NOT NULL, "title" text, "atlas_user_id" uuid NOT NULL, "created_at" timestamp DEFAULT now() );`}
+                    />
+                </div>
             </section>
 
             <section>
@@ -76,16 +80,6 @@ export default function Home() {
                     chat_id, COUNT(*) AS message_count FROM messages GROUP BY
                     chat_id ) m ON c.id = m.chat_id WHERE m.message_count >= 4;`}
                     />
-                    <span className={styles.cottonCandy}>SELECT</span>
-                    <span className={styles.cream}> {` c.id, c.title `}</span>
-                    <span className={styles.cottonCandy}>FROM</span>
-                    <span className={styles.cream}> {` chats c `}</span>
-                    <span className={styles.cottonCandy}>INNER JOIN</span>
-                    <span className={styles.cream}> {` ( `}</span>
-                    <span className={styles.cottonCandy}>SELECT</span>
-                    {`SELECT c.id, c.title FROM chats c INNER JOIN ( SELECT
-                    chat_id, COUNT(*) AS message_count FROM messages GROUP BY
-                    chat_id ) m ON c.id = m.chat_id WHERE m.message_count >= 4;`}
                 </div>
             </section>
         </main>

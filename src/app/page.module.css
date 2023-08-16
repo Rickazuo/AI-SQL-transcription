@@ -61,23 +61,3 @@
 .star:hover {
     fill: #2dff0b !important;
 }
-
-.gum {
-    color: var(--gum, #fd78c4);
-}
-
-.pistachio {
-    color: var(--pistachio, #d3ffcc);
-}
-
-.cream {
-    color: var(--cream, #e2dfcd);
-}
-
-.cottonCandy {
-    color: var(--cotton-candy, #66d9ef);
-}
-
-.neonGreen {
-    color: #2dff0b;
-}
