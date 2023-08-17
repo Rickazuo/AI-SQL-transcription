@@ -12,7 +12,7 @@ export default function Home() {
         <main className={styles.main}>
             <header className={styles.header}>
                 <Image
-                    className={styles.img}
+                    className={styles.img1}
                     src="/logo.svg"
                     alt="Next.js Logo"
                     width={118}
@@ -20,7 +20,7 @@ export default function Home() {
                     priority
                 />{" "}
                 <Image
-                    className={styles.img}
+                    className={styles.img2}
                     src="/trash.svg"
                     alt="Trash"
                     width={32}

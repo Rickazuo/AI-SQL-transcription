@@ -1,58 +1,55 @@
 body {
-    background: #07061d;
+  background: #07061d;
 }
 
 section {
-    color: var(--foam, #d7dae2);
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 28px;
-    min-width: 382px;
+  color: var(--foam, #d7dae2);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px;
 }
 
 h6 {
-    color: var(--foam, #d7dae2);
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: 28px; /* 155.556% */
-    margin: 0;
-    margin-bottom: 24px;
+  color: var(--foam, #d7dae2);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 28px; /* 155.556% */
+  margin: 0;
+  margin-bottom: 24px;
 }
 
 ::-webkit-scrollbar {
-    width: 5px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
-    background: none;
+  background: none;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.4);
-    border-radius: 999px;
-    margin: 5px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 999px;
+  margin: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.5);
 }
 
-
 .gum {
-    color: var(--gum, #fd78c4);
+  color: var(--gum, #fd78c4);
 }
 
 .pistachio {
-    color: var(--pistachio, #d3ffcc);
+  color: var(--pistachio, #d3ffcc);
 }
 
 .cottonCandy {
-    color: var(--cotton-candy, #66d9ef);
+  color: var(--cotton-candy, #66d9ef);
 }
 
 .neonGreen {
-    color: #2dff0b;
+  color: #2dff0b;
 }
-
