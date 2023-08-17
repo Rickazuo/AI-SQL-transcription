@@ -1,97 +1,151 @@
 .main {
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6rem;
+  margin-bottom: 2rem;
 }
 
-.img {
-    cursor: pointer;
+.img1 {
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.img1:hover {
+  transform: scale(1.05);
+}
+
+.img2 {
+  cursor: pointer;
+}
+
+.img2:hover {
+  cursor: pointer;
+  animation: shake 0.8s ease-in-out;
 }
 
 .header {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }
 
 .lightContainer {
-    color: #e2dfcd;
-    border-radius: 5px;
-    border: 1px solid rgba(220, 255, 214, 0.2);
-    background: var(--8-lemon, rgba(194, 255, 184, 0.08));
-    max-width: 382px;
-    padding: 12px;
+  color: #e2dfcd;
+  border-radius: 5px;
+  border: 1px solid rgba(220, 255, 214, 0.2);
+  background: var(--8-lemon, rgba(194, 255, 184, 0.08));
+  max-width: 382px;
+  padding: 12px;
 }
 
 .darkContainer {
-    color: #e2dfcd;
-    border-radius: 5px;
-    border: 1px solid var(--20-guava, rgba(220, 255, 214, 0.2));
-    max-width: 382px;
-    padding: 12px;
-    height: 100px;
-    overflow-y: scroll;
+  color: #e2dfcd;
+  border-radius: 5px;
+  border: 1px solid var(--20-guava, rgba(220, 255, 214, 0.2));
+  max-width: 382px;
+  padding: 12px;
+  height: 100px;
+  overflow-y: scroll;
 }
 
 .button {
-    cursor: pointer;
-    display: flex;
-    width: 382px;
-    height: 53px;
-    padding: 3px 22px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    border-radius: 10px;
-    border: 1px solid var(--pistachio, #d3ffcc);
-    background: none;
-    color: var(--pistachio, #d3ffcc);
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
+  cursor: pointer;
+  display: flex;
+  height: 53px;
+  padding: 3px 22px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 10px;
+  border: 1px solid var(--pistachio, #d3ffcc);
+  background: none;
+  color: var(--pistachio, #d3ffcc);
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
 
-    transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .button:hover {
-    color: #2dff0b;
-    border-color: #2dff0b;
+  filter: hue-rotate(50deg);
 }
 
-.star {
-    transition: fill 0.3s ease-in-out;
-}
-
-.star:hover {
-    fill: #2dff0b !important;
+.button:hover .star {
+  animation: shake 2.5s ease-in-out;
 }
 
 .textArea {
-    width: 100%;
-    max-width: 382px;
-    background-color: black;
-    color: #e2dfcd;
-    border: 1px solid rgba(220, 255, 214, 0.2);
-    border-radius: 5px;
-    padding: 10px; 
-    resize: none;
-    margin-bottom: 1rem;
+  width: 100%;
+  max-width: 382px;
+  background-color: black;
+  color: #e2dfcd;
+  border: 1px solid rgba(220, 255, 214, 0.2);
+  border-radius: 5px;
+  padding: 10px;
+  resize: none;
+  margin-bottom: 1rem;
 }
 
 .smallTextArea {
-    color: #e2dfcd;
-    border-radius: 5px;
-    border: 1px solid var(--20-guava, rgba(220, 255, 214, 0.2));
-    max-width: 382px;
-    width: 100%;
-    resize: none;
-    background-color: #07061d;
+  color: #e2dfcd;
+  border-radius: 5px;
+  border: 1px solid var(--20-guava, rgba(220, 255, 214, 0.2));
+  max-width: 382px;
+  width: 100%;
+  resize: none;
+  background-color: #07061d;
 }
 
-.textArea:focus, .smallTextArea:focus{
-    border-color: rgba(255, 255, 255, 0.5);
-    outline: none;
+.textArea:focus,
+.smallTextArea:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+  outline: none;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: rotate(-22deg);
+  }
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: rotate(22deg);
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    padding: 1rem;
+  }
+
+  .textArea {
+    padding: 0;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .smallTextArea {
+    padding: 0;
+    padding-left: 0.5rem;
+    padding-top: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 315px) {
+  .button {
+    font-size: 0.75rem;
+  }
 }
